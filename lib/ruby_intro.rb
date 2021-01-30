@@ -4,10 +4,25 @@
 
 def sum arr
   # YOUR CODE HERE
+    if(arr.empty?) 
+        return 0
+    end
+    sum =0 
+    for i in 0..arr.length-1
+        sum = sum + arr[i]
+    end
+    return sum
 end
 
 def max_2_sum arr
   # YOUR CODE HERE
+    if(arr.empty?) 
+        return 0
+    end
+      if(arr.length == 1) 
+        return arr[1]
+    end
+    
 end
 
 def sum_to_n? arr, n
