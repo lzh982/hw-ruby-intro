@@ -47,18 +47,58 @@ end
 
 def hello(name)
   # YOUR CODE HERE
+  return "Hello, " + name
 end
 
 def starts_with_consonant? s
   # YOUR CODE HERE
+  if (s.empty?)
+    p false
+  elsif /\A[AEIOU]/i=~ s
+    p false
+  elsif /\A\W/i =~s 
+    p false
+  else
+    p true
+  end
 end
+
 
 def binary_multiple_of_4? s
   # YOUR CODE HERE
+  if( s=="0")
+    return true
+  end
+  if(/^[10]*00$/.match(s) != nil)
+    p true
+  else
+    p false
+  end
 end
 
 # Part 3
 
 class BookInStock
 # YOUR CODE HERE
+  #book isbn
+  #book price 
+  # price_as_string method  //input:20 -> output: $20.00
+                          # //input:33.8-> $33.
+    attr_accessor :isbn
+    attr_accessor :price
+    def initialize(identifier, prices )
+        raise ArgumentError,
+            "Illegal Input" if identifier.empty? or prices < 1
+        
+        @isbn = identifier
+        @price = prices
+    end
+    
+    
+    def price_as_string
+
+        money = "$" + "%2.2f" % @price.to_s
+        return money
+    end          
+
 end
